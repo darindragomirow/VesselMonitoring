@@ -1,3 +1,11 @@
-<p>The tag value is: {{tagValue.value}}</p>
+<!-- <p>The tag value is: {{tagValue.value}}</p>
 <p>The value time is: {{tagValue.time}}</p>
-<p>Value is good: {{tagValue.isGood}}</p>
+<p>Value is good: {{tagValue.isGood}}</p> -->
+
+<app-tag-selector></app-tag-selector>
+
+<h3>All available tags:</h3>
+    <div *ngFor='let tag of tags'>
+        <hr>
+        <app-tag-value [tag]='tag'></app-tag-value>
+    </div>

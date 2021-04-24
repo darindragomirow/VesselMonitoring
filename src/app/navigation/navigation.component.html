@@ -1,0 +1,67 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/vessel-icon.png">
+        </div>
+  
+        <ul class="list-unstyled components">
+            <p>Vessel Monitoring</p>
+            <li>
+                <a routerLink="/app-home" routerLinkActive="active" (click)="selectNavigationItem('Home')">Home</a>
+            </li>
+            <li>
+                <a href="#vesselDataSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Vessel data</a>
+                <ul class="collapse show list-unstyled" id="vesselDataSubmenu">
+                    <li>
+                        <a routerLink="/app-home" routerLinkActive="active">Vital indicators</a>
+                    </li>
+                    <li>
+                        <a href="#engineSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Engine</a>
+                        <ul class="collapse show list-unstyled" id="engineSubMenu">
+                            <li>
+                                <a routerLink="/app-vessel-engine-main" routerLinkActive="active" (click)="selectNavigationItem('Engine General View')">Engine General View</a>
+                            </li>
+                            <li>
+                                <a routerLink="/app-vessel-engine-cylinders" routerLinkActive="active" (click)="selectNavigationItem('Engine Cylinders')">Engine Cylinders</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Thrusters</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Alarms</a>
+            </li>
+            <li>
+                <a routerLink="/app-weather" routerLinkActive="active" (click)="selectNavigationItem('Weather')">Weather</a>
+            </li>
+            <li>
+                <a routerLink="/app-tags" routerLinkActive="active" (click)="selectNavigationItem('Tags')">Tags</a>
+            </li>
+            <li>
+                <a routerLink="/app-calendar" routerLinkActive="active" (click)="selectNavigationItem('Calendar')">Calendar</a>
+            </li>
+        </ul>
+        
+    </nav>
+    <!-- Page Content -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: auto; max-width: 500px;">
+            <div>
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <span>Menu</span>
+            </div>
+            <h3 style="margin-left: 100px;">{{selectedNavigationItem}}</h3>
+        </nav>
+
+        <!-- Here is the entry point for all of the components-->
+        <router-outlet></router-outlet>
+    </div>
+  </div>

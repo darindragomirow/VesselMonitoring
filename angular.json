@@ -36,13 +36,16 @@
               "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
               "./node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "./node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
-              "src/styles.scss"
+              "./node_modules/jquery-ui-dist/jquery-ui.css",
+              "./src/styles.scss"
             ],
             "scripts": [
               "./node_modules/chart.js/dist/Chart.js",
               "./node_modules/hammerjs/hammer.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
-              "src/navigation.js"
+              "./node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "./src/navigation.js",
+              "./bower_components/jquery-thermometer/js/jquery.thermometer.js",
             ]
           },
            "configurations": {

@@ -1,0 +1,25 @@
+.windmill {
+    height: 300px;
+    width: 300px;
+}
+
+.gauge{
+    height: 300px;
+    width: 300px;
+}
+
+.weather span{
+    display: block;
+}
+
+.wind, .comfort-level{
+    display: inline-block;
+}
+
+.wind {
+    margin-left: 50px;
+}
+
+.wind p, .comfort-level p {
+    text-align: center;
+}

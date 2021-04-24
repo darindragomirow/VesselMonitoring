@@ -1,0 +1,39 @@
+.engine-main-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.engine-view {
+    display: flex;
+    justify-content: center;
+}
+
+.engine-info {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 10%;
+    margin-left: -10%;
+}
+
+.engine-vital-data {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 10%;
+}
+
+.engine-view > img {
+    width: 40%;
+}
+
+.engine-stress {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: -12%;
+    margin-left: 60%;
+}
+
+.gauge {
+    height: 200px;
+    width: 200px;
+}

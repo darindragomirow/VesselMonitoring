@@ -1,0 +1,28 @@
+<div class="engine-main-container">
+    <div class="engine-view">
+        <div class="engine-info">
+            <h5>Main characteristics</h5>
+            <span><b>Model: </b> WinGD X35-B</span>
+            <span><b>Type: </b> 4 stroke</span>
+            <span><b>Weight: </b> 74 t</span>
+            <span><b>Fuel: </b> Diesel</span>
+            <span><b>Cylinders: </b> 5</span>
+            <span><b>Cylinder bore: </b> 350 mm</span>
+            <span><b>Piston stroke: </b> 1550 mm</span>
+        </div>
+        <img src="../../../assets/engine/vessel-engine-main-view.jpg">
+        <div class="engine-vital-data">
+            <h5 id="label">Main data</h5>
+            <span><b>Shaft speed: </b> 25 knots</span>
+            <span><b>Shaft power: </b> 120 rpm</span>
+            <span><b>Avg.temp: </b> 73 C°</span>
+            <span><b>Mean effective pressure: </b> 21.0 bar</span>
+            <span><b>Fuel consumption: </b> 2907 kg/h</span>
+            <span><b>Run time: </b> 15 hrs</span>
+            <br><br><span><b>Engine stress</b></span>
+        </div>
+    </div>
+    <div class="engine-stress">
+        <div echarts [options]="engineStressOptions" class="gauge"></div>
+    </div>
+</div>
