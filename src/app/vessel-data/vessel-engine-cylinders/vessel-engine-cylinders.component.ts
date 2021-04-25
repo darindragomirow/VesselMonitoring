@@ -11,7 +11,7 @@ export class VesselEngineCylindersComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.initCylindersTemperatures();
+    // this.initCylindersTemperatures();
   }
 
   private initCylindersTemperatures(): void {
