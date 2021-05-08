@@ -25,10 +25,24 @@
                             <li>
                                 <a routerLink="/app-vessel-engine-cylinders" routerLinkActive="active" (click)="selectNavigationItem('Engine Cylinders')">Engine Cylinders</a>
                             </li>
+                            <li>
+                                <a routerLink="/app-vessel-engine-turbocharging" routerLinkActive="active" (click)="selectNavigationItem('Turbocharging')">Engine turbocharging</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Thrusters</a>
+                        <a routerLink="/app-vessel-thrusters" routerLinkActive="active" (click)="selectNavigationItem('Thrusters')">Thrusters</a>
+                    </li>
+                    <li>
+                        <a href="#fuelSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Fuel</a>
+                        <ul class="collapse show list-unstyled" id="fuelSubMenu">
+                            <li>
+                                <a routerLink="/app-vessel-fuel-main" routerLinkActive="active" (click)="selectNavigationItem('Fuel Main View')">Fuel Main View</a>
+                            </li>
+                            <li>
+                                <a routerLink="/app-vessel-fuel-statistics" routerLinkActive="active" (click)="selectNavigationItem('Fuel Statistics')">Fuel Statistics</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>

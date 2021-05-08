@@ -1,38 +1,68 @@
-<div class="engine-cylinders">
-    <div class="engine-cylinder">
-        <span>Cylinder 1</span>
-        <img src="../../../assets/engine/vessel-engine-cylinder.gif">
-        <div id="cylinder-1-temperature">
-            <span id="engine-temperature-value">71 C°</span>
+<div class="engine-cylinders-container">
+    <div class="engine-cylinders">
+        <div class="engine-cylinder">
+            <div class="cylinder-1-pressure">
+                <div echarts [options]="cylinderPressureOptions" class="gauge"></div>
+            </div>
+            <span>Cylinder 1</span>
+            <img src="../../../assets/engine/vessel-engine-cylinder.gif">
+            <div id="cylinder-1-temperature">
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
         </div>
-        <app-vessel-linear-gauge></app-vessel-linear-gauge>
-    </div>
-    <div class="engine-cylinder">
-        <span>Cylinder 2</span>
-        <img src="../../../assets/engine/vessel-engine-cylinder.gif">
-        <div id="cylinder-2-temperature">
-            <span id="engine-temperature-value">72 C°</span>
+        <div class="engine-cylinder">
+            <div class="cylinder-2-pressure">
+                <div echarts [options]="cylinderPressureOptions" class="gauge"></div>
+            </div>
+            <span>Cylinder 2</span>
+            <img src="../../../assets/engine/vessel-engine-cylinder.gif">
+            <div id="cylinder-2-temperature">
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
+        </div>
+        <div class="engine-cylinder">
+            <div class="cylinder-3-pressure">
+                <div echarts [options]="cylinderPressureOptions" class="gauge"></div>
+            </div>
+            <span>Cylinder 3</span>
+            <img src="../../../assets/engine/vessel-engine-cylinder.gif">
+            <div id="cylinder-3-temperature">
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
+        </div>
+        <div class="engine-cylinder">
+            <div class="cylinder-4-pressure">
+                <div echarts [options]="cylinderPressureOptions" class="gauge"></div>
+            </div>
+            <span>Cylinder 4</span>
+            <img src="../../../assets/engine/vessel-engine-cylinder.gif">
+            <div id="cylinder-4-temperature">
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
+        </div>
+        <div class="engine-cylinder">
+            <div class="cylinder-5-pressure">
+                <div echarts [options]="cylinderPressureOptions" class="gauge"></div>
+            </div>
+            <span>Cylinder 5</span>
+            <img src="../../../assets/engine/vessel-engine-cylinder.gif">
+            <div id="cylinder-5-temperature">
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
         </div>
     </div>
-    <div class="engine-cylinder">
-        <span>Cylinder 3</span>
-        <img src="../../../assets/engine/vessel-engine-cylinder.gif">
-        <div id="cylinder-3-temperature">
-            <span id="engine-temperature-value">73 C°</span>
+    <div class="cylinders-charts">
+        <div class="temperature-chart">
+            <app-vessel-line-chart 
+                [id]="temperatureChartId"
+                [title]="temperatureChartTitle">
+            </app-vessel-line-chart>
         </div>
-    </div>
-    <div class="engine-cylinder">
-        <span>Cylinder 4</span>
-        <img src="../../../assets/engine/vessel-engine-cylinder.gif">
-        <div id="cylinder-4-temperature">
-            <span id="engine-temperature-value">74 C°</span>
-        </div>
-    </div>
-    <div class="engine-cylinder">
-        <span>Cylinder 5</span>
-        <img src="../../../assets/engine/vessel-engine-cylinder.gif">
-        <div id="cylinder-5-temperature">
-            <span id="engine-temperature-value">75 C°</span>
+        <div class="pressure-chart">
+            <app-vessel-line-chart 
+                [id]="pressureChartId"
+                [title]="pressureChartTitle">
+            </app-vessel-line-chart>
         </div>
     </div>
 </div>

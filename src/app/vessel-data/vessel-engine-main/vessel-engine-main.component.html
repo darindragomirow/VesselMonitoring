@@ -11,18 +11,77 @@
             <span><b>Piston stroke: </b> 1550 mm</span>
         </div>
         <img src="../../../assets/engine/vessel-engine-main-view.jpg">
-        <div class="engine-vital-data">
-            <h5 id="label">Main data</h5>
-            <span><b>Shaft speed: </b> 25 knots</span>
-            <span><b>Shaft power: </b> 120 rpm</span>
-            <span><b>Avg.temp: </b> 73 C°</span>
-            <span><b>Mean effective pressure: </b> 21.0 bar</span>
-            <span><b>Fuel consumption: </b> 2907 kg/h</span>
-            <span><b>Run time: </b> 15 hrs</span>
-            <br><br><span><b>Engine stress</b></span>
+        <div class="engine-vital-data-right">
+            <div class="engine-stress">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+                <br><br><span><b>Engine stress</b></span>
+            </div>
+            <div class="engine-pressure">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+                <br><br><span><b>Engine mean pressure</b></span>
+            </div>
         </div>
     </div>
-    <div class="engine-stress">
-        <div echarts [options]="engineStressOptions" class="gauge"></div>
+    <div class="engine-vital-data-bottom">
+        <div class="row-1">
+            <div class="engine-shaft-speed">
+                <br><br><span><b>Shaft speed</b></span>
+                <app-vessel-circular-gauge></app-vessel-circular-gauge>
+            </div>
+            <div class="engine-shaft-power">
+                <br><br><span><b>Shaft power</b></span>
+                <app-vessel-circular-gauge></app-vessel-circular-gauge>
+            </div>
+            <div id="engine-temperature">
+                <br><br><span><b>Temperature</b></span>
+                <app-vessel-linear-gauge></app-vessel-linear-gauge>
+            </div>
+        </div>
+        <div class="row-1">
+        </div>
+    </div>
+    <div class="control-panel">
+        <div class="data-row">
+            <div class="data-column">
+                <br><br><span><b>Start air</b></span>
+                <div class="data-row">
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                </div>
+            </div>
+            <div class="data-column">
+                <br><br><span><b>ME load index</b></span>
+                <div class="data-row">
+                    <div id="me-load-index">
+                        <app-vessel-linear-gauge 
+                        orientation="Vertical"
+                        color="#34A853"
+                        type="Normal"
+                        [height]="300" >
+                    </app-vessel-linear-gauge>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data-row">
+            <div class="data-column">
+                <br><br><span><b>Control air</b></span>
+                <div class="data-row">
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                </div>
+            </div>
+            <div class="data-column">
+                <br><br><span><b>ME torque</b></span>
+                <div class="data-row">
+                    <div id="me-load-index">
+                        <app-vessel-linear-gauge 
+                        orientation="Vertical"
+                        color="#34A853"
+                        type="Normal"
+                        [height]="300" >
+                    </app-vessel-linear-gauge>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -7,7 +7,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TagsComponent } from './tags/tags.component';
 import { VesselEngineCylindersComponent } from './vessel-data/vessel-engine-cylinders/vessel-engine-cylinders.component';
 import { VesselEngineMainComponent } from './vessel-data/vessel-engine-main/vessel-engine-main.component';
+import { VesselEngineTurbochargingComponent } from './vessel-data/vessel-engine-turbocharging/vessel-engine-turbocharging.component';
+import { VesselFuelMainComponent } from './vessel-data/vessel-fuel-main/vessel-fuel-main.component';
+import { VesselFuelStatisticsComponent } from './vessel-data/vessel-fuel-statistics/vessel-fuel-statistics.component';
+import { VesselThrustersComponent } from './vessel-data/vessel-thrusters/vessel-thrusters.component';
 import { WeatherComponent } from './weather/weather.component';
+import { VesselLineChartComponent } from './widgets/vessel-line-chart/vessel-line-chart.component';
 import { VesselLinearGaugeComponent } from './widgets/vessel-linear-gauge/vessel-linear-gauge.component';
 
 const routes: Routes = [
@@ -20,7 +25,10 @@ const routes: Routes = [
   { path: 'app-weather', component: WeatherComponent },
   { path: 'app-vessel-engine-main', component: VesselEngineMainComponent },
   { path: 'app-vessel-engine-cylinders', component: VesselEngineCylindersComponent },
-  { path: 'app-vessel-linear-gauge', component: VesselLinearGaugeComponent }
+  { path: 'app-vessel-thrusters', component: VesselThrustersComponent },
+  { path: 'app-vessel-engine-turbocharging', component: VesselEngineTurbochargingComponent },
+  { path: 'app-vessel-fuel-main', component: VesselFuelMainComponent },
+  { path: 'app-vessel-fuel-statistics', component: VesselFuelStatisticsComponent }
 ];
 
 @NgModule({

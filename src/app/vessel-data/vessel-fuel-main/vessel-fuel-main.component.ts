@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { WidgetOptionsProvider } from 'src/app/widgets/widgetOptionsProvider';
 
 @Component({
-  selector: 'app-vessel-engine-main',
-  templateUrl: './vessel-engine-main.component.html',
-  styleUrls: ['./vessel-engine-main.component.css']
+  selector: 'app-vessel-fuel-main',
+  templateUrl: './vessel-fuel-main.component.html',
+  styleUrls: ['./vessel-fuel-main.component.css']
 })
-export class VesselEngineMainComponent implements OnInit {
+export class VesselFuelMainComponent implements OnInit {
 
   gaugeOptions: any;
 
@@ -15,4 +15,5 @@ export class VesselEngineMainComponent implements OnInit {
   ngOnInit(): void {
     this.gaugeOptions = WidgetOptionsProvider.GetGaugeOptions();
   }
+
 }

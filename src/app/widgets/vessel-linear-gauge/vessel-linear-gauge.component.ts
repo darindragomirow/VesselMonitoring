@@ -1,6 +1,7 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Input, ViewChild } from '@angular/core';
 import { LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
-import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge';
+import { ContainerType, ILoadedEventArgs, Orientation } from '@syncfusion/ej2-lineargauge';
+import { timeStamp } from 'console';
 
 @Component({
   selector: 'app-vessel-linear-gauge',
@@ -9,53 +10,72 @@ import { ILoadedEventArgs, LinearGaugeTheme } from '@syncfusion/ej2-lineargauge'
   encapsulation: ViewEncapsulation.None
 })
 export class VesselLinearGaugeComponent implements OnInit {
-    // @ViewChild('gauge')
-    // public gauge: LinearGaugeComponent;
+    @Input() orientation = 'Vertical';
+    @Input() type = 'Thermometer';
+    @Input() color = '#F02828';
+    @Input() height = 100;
 
-  // Initializing Axes
-
-  public Axes: any[] = [{
-    minimum: 0,
-    maximum: 200,
-    line: {
-        width: 0
-    },
-    majorTicks: {
-        interval: 50,
-        color: '#9e9e9e'
-    },
-    minorTicks: {
-        color: '#9e9e9e'
-    },
-    pointers: [
-        {
-            value: 90,
-            height: 10,
-            width: 10,
-            roundedCornerRadius: 5,
-            type: 'Bar',
-            color: '#f02828'
-        }
-    ]
-}];
-
-  public Container: any = {
-      width: 10,
-      height: 150,
-      roundedCornerRadius: 5,
-      type: 'Thermometer'
-  };
+    @ViewChild('gauge')
+    public gauge: LinearGaugeComponent | undefined;
+    public id: number = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+    public axes: any[] = [];
+    public container: any;
 
   constructor() {
   }
 
   ngOnInit(): void {
+      this.initializeGaugeOptions();
+      this.applyCustomStyles();
+      this.setOrientation();
   }
 
-  // custom code start
-  public load(args: any): void {
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Material';
-    args.gauge.theme = selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1) as LinearGaugeTheme;
-}
+  private applyCustomStyles(): void {
+    setTimeout(() => {
+        const widgets = $('svg > rect').attr('fill', 'transparent');
+    }, 200);
+  }
+
+  private initializeGaugeOptions(): void {
+    this.axes = [{
+        minimum: 0,
+        maximum: 200,
+        line: {
+            width: 0
+        },
+        majorTicks: {
+            interval: 50,
+            color: '#9e9e9e'
+        },
+        minorTicks: {
+            color: '#9e9e9e'
+        },
+        pointers: [
+            {
+                value: 90,
+                height: 5,
+                width: 5,
+                roundedCornerRadius: 5,
+                type: 'Bar',
+                color: this.color
+            }
+        ]
+    }];
+
+    this.container = {
+          width: 7,
+          height: this.height,
+          roundedCornerRadius: 5,
+          type: this.type
+      };
+  }
+
+  private setOrientation(): void {
+    setTimeout(() => {
+        if (this.gauge) {
+            this.gauge.orientation = this.orientation as Orientation;
+            this.gauge.refresh();
+        }
+    }, 100);
+  }
 }

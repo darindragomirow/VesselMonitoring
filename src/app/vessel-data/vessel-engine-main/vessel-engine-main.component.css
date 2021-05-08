@@ -15,9 +15,15 @@
     margin-left: -10%;
 }
 
-.engine-vital-data {
+.engine-vital-data-right {
     display: flex;
     flex-flow: column wrap;
+    margin-top: 10%;
+}
+
+.engine-vital-data-bottom {
+    display: flex;
+    flex-flow: row wrap;
     margin-top: 10%;
 }
 
@@ -29,11 +35,52 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-top: -12%;
-    margin-left: 60%;
+    margin-left: -25%;
+    margin-top: -25%;
+}
+
+.engine-pressure {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-left: -5%;
+    margin-top: -10%;
 }
 
 .gauge {
     height: 200px;
     width: 200px;
+}
+
+.control-panel .gauge {
+    height: 300px;
+    width: 300px;
+}
+
+.engine-vital-data-bottom {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.engine-vital-data-bottom > .row-1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.engine-vital-data-bottom > .row-1 div {
+    width: 25%;
+}
+
+.engine-vital-data-bottom span {
+    margin-left: 30%;
+}
+
+.control-panel {
+    margin-left: 20%;
+}
+
+.control-panel span {
+    text-align: center;
 }

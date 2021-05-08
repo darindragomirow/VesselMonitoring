@@ -1,8 +1,18 @@
+.engine-cylinders-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 .engine-cylinders {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     margin-top: 5%;
+}
+
+.engine-cylinder {
+    display: flex;
+    flex-flow: column;
 }
 
 .engine-cylinder > img {
@@ -11,10 +21,27 @@
 }
 
 .engine-cylinder > div {
-    margin-left: 20%;
-    margin-top: 5%;
+    margin-top: -5%;
 }
 
 .engine-cylinder > span {
     margin-left: 10%;
+}
+
+.gauge {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 5%;
+}
+
+.cylinders-charts {
+    /* display: flex;
+    flex-flow: row wrap;
+    flex-grow: 10; */
+}
+
+.temperature-chart, .pressure-chart {
+    display: inline-block;
+    width: 47%;
+    margin-left: 3%;
 }
