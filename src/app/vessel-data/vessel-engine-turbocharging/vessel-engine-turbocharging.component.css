@@ -1,0 +1,78 @@
+.engine-turbocharging-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.engine-turbocharging-view {
+    display: flex;
+    justify-content: center;
+}
+
+.engine-turbocharging-info {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 10%;
+    margin-left: -10%;
+}
+
+.engine-turbocharging-view > img {
+    width: 35%;
+    margin-top: 10%;
+}
+
+.engine-turbocharging-data {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.engine-turbocharging-data {
+    margin-top: 10%;
+}
+
+.data-column h5 {
+    text-align: center;
+}
+
+.gauge {
+    height: 300px;
+    width: 300px;
+}
+
+#filter1 {
+    margin-left: 20%;
+    margin-right: 43%;
+}
+
+#turbochargers-gas-after {
+    margin-top: 10%;
+}
+
+#turbochargers-speed #tc1 {
+    margin-left: 15%;
+    margin-right: 30%;
+}
+
+#turbochargers-gas-after #tc1 {
+    margin-left: 5%;
+    margin-right: 30%;
+}
+
+#ac1 {
+    margin-left: 15%;
+    margin-right: 30%;
+}
+
+#turbochargers-speed, #turbochargers-gas-before {
+    margin-top: 5%;
+    justify-content: center;
+}
+
+#gas-after-temperature-1, #gas-after-temperature-2 {
+    width: 20em;
+}
+
+.background {
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

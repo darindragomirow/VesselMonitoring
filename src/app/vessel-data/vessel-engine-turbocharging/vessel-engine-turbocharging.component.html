@@ -1,0 +1,114 @@
+<div class="engine-turbocharging-container">
+    <div class="engine-turbocharging-view">
+        <div class="engine-turbocharging-info">
+            <h5>Main characteristics</h5>
+            <span><b>Model: </b> A100-M</span>
+            <span><b>Type: </b> for medium-speed engines</span>
+            <span><b>Weight: </b> 2 t</span>
+            <span><b>Power output: </b> 500 - 6000 kW</span>
+            <span><b>Pressure ratios: </b> 5.8</span>
+            <span><b>Turbocharging efficiency: </b> 65%</span>
+            <span><b>Cooling: </b> compressor air</span>
+        </div>
+        <img src="../../../assets/turbocharging/engine-turbocharger.jpg">
+    </div>
+    <div class="engine-turbocharging-data">
+        <!-- Air filter pressure drop / Air cooler pressure drop -->
+        <div class="data-row">
+            <div class="data-column">
+                <h5>Air filter pressure drop</h5>
+                <div class="data-row">
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                </div>
+                <div class="data-row">
+                    <span id="filter1">Filter 1</span>
+                    <span id="filter2">Filter 2</span>
+                </div>
+            </div>
+            <div class="data-column">
+                <h5>Air cooler pressure drop</h5>
+                <div class="data-row">
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                </div>
+                <div class="data-row">
+                    <span id="ac1">Air cooler 1</span>
+                    <span id="ac2">Air cooler 2</span>
+                </div>
+            </div>
+        </div>
+        <!-- Turbocharger speed -->
+        <div id="turbochargers-speed" class="data-row">
+            <div class="data-column">
+                <h5>Turbocharging speed</h5>
+                <div class="data-row">
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                </div>
+                <div class="data-row">
+                    <span id="tc1">Turbocharger 1</span>
+                    <span id="tc2">Turbocharger 2</span>
+                </div>
+            </div>
+        </div>
+        <!-- Gas before TC -->
+        <div id="turbochargers-gas-before" class="data-row">
+            <div class="data-column">
+                <h5>Gas temperature before TC</h5>
+                <div class="data-row">
+                    <div id="gas-before-temperature">
+                        <app-vessel-linear-gauge [height]="150">
+                        </app-vessel-linear-gauge>
+                    </div>
+                </div>
+            </div>
+            <div class="data-column">
+                <h5>Gas pressure before TC</h5>
+                <div class="data-row">
+                    <div id="gas-before-pressure">
+                        <app-vessel-linear-gauge 
+                        orientation="Horizontal"
+                        color="#5470C6"
+                        type="Normal"
+                        [height]="300" >
+                    </app-vessel-linear-gauge>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Gas after TC -->
+        <div id="turbochargers-gas-after" class="data-row">
+            <div class="data-column">
+                <h5>Gas temperature after TC</h5>
+                <div class="data-row">
+                    <div id="gas-after-temperature-1">
+                        <app-vessel-linear-gauge [height]="100">
+                        </app-vessel-linear-gauge>
+                    </div>
+                    <div id="gas-after-temperature-2">
+                        <app-vessel-linear-gauge [height]="100">
+                        </app-vessel-linear-gauge>
+                    </div>
+                </div>
+                <div class="data-row">
+                    <span id="tc1">Turbocharger 1</span>
+                    <span id="tc2">Turbocharger 2</span>
+                </div>
+            </div>
+            <div class="data-column">
+                <h5>Gas pressure after TC</h5>
+                <div class="data-row">
+                    <div id="gas-after-pressure">
+                        <app-vessel-linear-gauge 
+                        orientation="Horizontal"
+                        color="#5470C6"
+                        type="Normal"
+                        [height]="300" >
+                    </app-vessel-linear-gauge>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

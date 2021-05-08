@@ -7,19 +7,15 @@ import { WidgetOptionsProvider } from 'src/app/widgets/widgetOptionsProvider';
   styleUrls: ['./vessel-engine-cylinders.component.css']
 })
 export class VesselEngineCylindersComponent implements OnInit {
+  cylinderPressureOptions: any;
+  temperatureChartId = 'temperature';
+  temperatureChartTitle = 'Average temperature';
+  pressureChartId = 'pressure';
+  pressureChartTitle = 'Average pressure';
 
   constructor() { }
 
   ngOnInit(): void {
-    this.initCylindersTemperatures();
+    this.cylinderPressureOptions = WidgetOptionsProvider.GetGaugeOptions();
   }
-
-  private initCylindersTemperatures(): void {
-    WidgetOptionsProvider.GetThermometerOptions('cylinder-1-temperature');
-    WidgetOptionsProvider.GetThermometerOptions('cylinder-2-temperature');
-    WidgetOptionsProvider.GetThermometerOptions('cylinder-3-temperature');
-    WidgetOptionsProvider.GetThermometerOptions('cylinder-4-temperature');
-    WidgetOptionsProvider.GetThermometerOptions('cylinder-5-temperature');
-  }
-
 }

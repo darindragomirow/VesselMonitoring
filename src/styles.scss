@@ -40,3 +40,13 @@ a, a:hover, a:focus {
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
+
+.data-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.data-column {
+    display: flex;
+    flex-flow: column wrap;
+}

@@ -1,0 +1,79 @@
+.thrusters-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.thrusters-container h5 {
+    text-align: center;
+}
+
+.azimuth-thrusters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 5%;
+    margin-left: 2em;
+    margin-bottom: 5em;
+}
+
+.bow-thrusters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-top: 5%;
+    margin-left: 2em;
+    margin-bottom: 5em;
+}
+
+#bow-thruster-right, #bow-thruster-left {
+    width: 30%;
+}
+
+.azimuth-thrusters img {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+}
+
+.bow-thrusters img {
+    width: 40%;
+    height: 40%;
+    margin-left: 25%;
+}
+
+.azimuth-thrusters h5 {
+    text-align: center;
+}
+
+#azimuth-thruster-center {
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.background {
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.thruster-data {
+    margin-top: 1em;
+}
+
+.thruster-data span {
+    display: block;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+#status {
+    height: 1em;
+    width: 1em;
+    border-radius: 100%;
+    background-color: green;
+    animation: blinker 4s linear infinite;
+}

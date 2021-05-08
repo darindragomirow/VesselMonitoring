@@ -1,0 +1,72 @@
+<div class="fuel-main-container">
+    <div class="data-row">
+        <data class="data-column">
+            <div class="data-column">
+                <h5>Fuel Supp. Pump 1</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+            <div class="data-column">
+                <h5>Fuel Supp. Pump 2</h5>
+                <app-vessel-toggle [on]="false"></app-vessel-toggle>
+            </div>
+        </data>
+        <div class="data-column">
+            <h5>Fuel supply out</h5>
+            <div class="data-row">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+            </div>
+        </div>
+        <div class="data-column">
+            <h5>Fuel oil viscosity</h5>
+            <div class="data-row">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+            </div>
+        </div>
+        <div id="fuel-temp-container" class="data-column">
+            <h5>Fuel inlet temperature</h5>
+            <div class="data-row">
+                <div id="fuel-inlet-temperature">
+                    <app-vessel-linear-gauge [height]="150">
+                    </app-vessel-linear-gauge>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="data-row-2" class="data-row">
+        <div class="data-column">
+            <h5>Fuel Circ. Pump 1</h5>
+            <app-vessel-toggle [on]="true"></app-vessel-toggle>
+        </div>
+        <div id="fuel-pressure-container" class="data-column">
+            <h5>Fuel inlet pressure</h5>
+            <div class="data-row">
+                <div id="fuel-inlet-temperature">
+                    <app-vessel-linear-gauge 
+                        [height]="300"
+                        orientation="Horizontal"
+                        type="Normal"
+                        color="#5470C6">
+                    </app-vessel-linear-gauge>
+                </div>
+            </div>
+        </div>
+        <div class="data-column">
+            <h5>Fuel Circ. Pump 2</h5>
+            <app-vessel-toggle [on]="false"></app-vessel-toggle>
+        </div>
+    </div>
+    <div id="data-row-3" class="data-row">
+        <div class="data-column">
+            <h5>Transmission Pump 1</h5>
+            <app-vessel-toggle [on]="true"></app-vessel-toggle>
+        </div>
+        <div class="data-column">
+            <h5>Transmission Pump 2</h5>
+            <app-vessel-toggle [on]="true"></app-vessel-toggle>
+        </div>
+        <div class="data-column">
+            <h5>Sludge Pump 2</h5>
+            <app-vessel-toggle [on]="false"></app-vessel-toggle>
+        </div>
+</div>
+</div>
