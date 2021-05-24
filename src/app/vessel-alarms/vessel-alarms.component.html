@@ -1,0 +1,31 @@
+<div class="alarms-container">
+    <div class="header">
+        <h4>Active Alarms</h4>
+    </div>
+    <table mdbTable class="z-depth-1">
+        <thead>
+        <tr>
+          <th [mdbTableSort]="elements" sortBy="id">ID</th>
+          <th [mdbTableSort]="elements" sortBy="time">Time</th>
+          <th [mdbTableSort]="elements" sortBy="initiator">Initiator</th>
+          <th [mdbTableSort]="elements" sortBy="description">Description</th>
+          <th [mdbTableSort]="elements" sortBy="severity">Severity</th>
+          <th [mdbTableSort]="elements" sortBy="treshold">Threshold</th>
+          <th [mdbTableSort]="elements" sortBy="condition">Condition</th>
+          <th [mdbTableSort]="elements" sortBy="acked">Acked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+          <th scope="row">{{el.id}}</th>
+          <td>{{el.time}}</td>
+          <td>{{el.initiator}}</td>
+          <td>{{el.description}}</td>
+          <td>{{el.severity}}</td>
+          <td>{{el.treshold}}</td>
+          <td>{{el.condition}}</td>
+          <td>{{el.acked}}</td>
+        </tr>
+        </tbody>
+      </table>
+  </div>

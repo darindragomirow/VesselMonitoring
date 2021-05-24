@@ -1,0 +1,19 @@
+.power-plant-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.data-row {
+    margin-bottom: 15%;
+    margin-left: 3em;
+}
+
+h5 {
+    margin-left: 10%;
+}
+
+.power-plant-container > h5 {
+    margin-left: 31%;
+    font-size: 2em;
+    color: red;
+}

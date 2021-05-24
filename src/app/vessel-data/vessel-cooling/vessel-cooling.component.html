@@ -1,0 +1,89 @@
+<div class="vessel-cooling-container">
+    <div class="data-row">
+        <div class="data-column">
+            <h5>Fresh water level</h5>
+            <div id="water-level">
+                <app-vessel-liquid-container></app-vessel-liquid-container>
+            </div>
+        </div>
+        <div id="fw-temp" class="data-column">
+            <h5>FW Outlet Temp.</h5>
+            <div class="thermomether">
+                <app-vessel-linear-gauge [height]="100">
+                </app-vessel-linear-gauge>
+            </div>
+            <div>
+                <h5>FW Heater</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+        <div id="fw-temp" class="data-column">
+            <h5>FW Inlet Temp.</h5>
+            <div class="thermomether">
+                <app-vessel-linear-gauge [height]="100">
+                </app-vessel-linear-gauge>
+            </div>
+            <div>
+                <h5>FW Pump 1</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+        <div class="data-column">
+            <h5>FW Inlet Press.</h5>
+            <div class="fw-inlet-pressure">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+            </div>
+            <div id="fw-pump-2">
+                <h5>FW Pump 2</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+    </div>
+    <div class="data-row">
+        <div class="data-column">
+            <h5>DG SW Inlet Press.</h5>
+            <div class="fw-inlet-pressure">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+            </div>
+            <div id="sw-pump-1">
+                <h5>DG SW Pump 1</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+        <div id="sw-temp" class="data-column">
+            <h5>SW Inlet Temp.</h5>
+            <div class="thermomether">
+                <app-vessel-linear-gauge [height]="100">
+                </app-vessel-linear-gauge>
+            </div>
+            <div>
+                <h5>SW Pump 1</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+        <div class="data-column">
+            <h5>SW Inlet Press.</h5>
+            <div class="sw-inlet-pressure">
+                <div echarts [options]="gaugeOptions" class="gauge"></div>
+            </div>
+            <div id="sw-pump-2">
+                <h5>SW Pump 2</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+    </div>
+    <div class="data-row">
+        <div class="data-column">
+            <div>
+                <h5>DG STBY Heater</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+        <div class="data-column">
+            <div>
+                <h5>DG STBY Pump</h5>
+                <app-vessel-toggle [on]="true"></app-vessel-toggle>
+            </div>
+        </div>
+    </div>
+</div>

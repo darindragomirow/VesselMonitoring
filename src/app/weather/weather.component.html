@@ -1,15 +1,33 @@
-<div class="weather">
-    <div class="comfort-level">
-        <p>Humidity</p>
-        <div echarts [options]="humidityOptions" class="humidity gauge"></div>
-        <span class="feelsLike">Feels like: 5°</span>
-        <span class="uv">UV index: Low</span>
-    </div>
-    <div class="wind">
-        <p>Wind</p>
-        <img src="../../assets//windmill.gif" class="windmill">
-        <span class="windDirection">Direction: West</span>
-        <span class="windSpeed">Speed: 12-28 km/h</span>
+<div class="weather-container">
+    <div class="data-row">
+        <div class="data-column">
+            <div class="temperature">
+                <angular-weather-widget [APIKEY]="'d3fe33dcd9f77dc9305e193fdf4bfa6b'" [width]="'auto'" [height]="'auto'" [backgroundColor]="'blue'"
+                [isBoxShadow]="true" [borderRadius]="'5px'" [locationFontSize]="'35px'" [locationFontColor]="'#fff'" [status]="true"
+                [statusFontColor]="'#fff'" [statusFontSize]="'18px'" [temperature]="true" [tempratureFontColor]="'#fff'"
+                [tempratureFontSize]="'75px'" [weatherImages]="true" [weatherImageWidth]="'110px'" [weatherImageHeight]="'110px'"
+                [geoLocation]="true" [location]="'new york'" [isWind]="true" [windFontColor]="'#fff'" [windFontSize]="'0px'"
+                [humidityFontColor]="'#fff'" [humidityFontSize]="'0px'">
+                </angular-weather-widget>
+            </div>
+        </div>
+        <div class="data-column">
+            <div class="comfort-level">
+                <p>Humidity</p>
+                <div echarts [options]="humidityOptions" class="humidity gauge"></div>
+                <span class="feelsLike">Feels like: 5°</span>
+                <span class="uv">UV index: Low</span>
+            </div>
+        </div>
+        <div class="data-column">
+            <div class="wind">
+                <p>Wind</p>
+                <img src="../../assets//windmill.gif" class="windmill">
+                <div id="wind-info">
+                    <span class="windDirection">Direction: West</span>
+                    <span class="windSpeed">Speed: 12-28 km/h</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-

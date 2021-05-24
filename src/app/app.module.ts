@@ -17,6 +17,7 @@ import { TagValueComponent } from './tags/sub-components/tag-value/tag-value.com
 import { HomeComponent } from './home/home.component';
 import { VesselMainDataComponent } from './vessel-data/vessel-main-data/vessel-main-data.component';
 import { VesselEngineMainComponent } from './vessel-data/vessel-engine-main/vessel-engine-main.component';
+import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
 import { WeatherComponent } from './weather/weather.component';
 import { VesselEngineCylindersComponent } from './vessel-data/vessel-engine-cylinders/vessel-engine-cylinders.component';
 import { VesselLinearGaugeComponent } from './widgets/vessel-linear-gauge/vessel-linear-gauge.component';
@@ -28,6 +29,18 @@ import { VesselFuelMainComponent } from './vessel-data/vessel-fuel-main/vessel-f
 import { VesselToggleComponent } from './widgets/vessel-toggle/vessel-toggle.component';
 import { VesselFuelStatisticsComponent } from './vessel-data/vessel-fuel-statistics/vessel-fuel-statistics.component';
 import { VesselArcGaugeComponent } from './widgets/vessel-arc-gauge/vessel-arc-gauge.component';
+import { VesselLiquidContainerComponent } from './widgets/vessel-liquid-container/vessel-liquid-container.component';
+import { VesselDataCounterComponent } from './widgets/vessel-data-counter/vessel-data-counter.component';
+import { VesselDataCounterIconComponent } from './widgets/vessel-data-counter-icon/vessel-data-counter-icon.component';
+import { VesselCoolingComponent } from './vessel-data/vessel-cooling/vessel-cooling.component';
+import { VesselCompressedAirComponent } from './vessel-data/vessel-compressed-air/vessel-compressed-air.component';
+import { VesselAmmeterComponent } from './widgets/vessel-ammeter/vessel-ammeter.component';
+import { VesselPowerPlantComponent } from './vessel-data/vessel-power-plant/vessel-power-plant.component';
+import { VesselPowerPlantStatisticsComponent } from './vessel-data/vessel-power-plant-statistics/vessel-power-plant-statistics.component';
+import { VesselCrewTasksComponent } from './vessel-crew/vessel-crew-tasks/vessel-crew-tasks.component';
+import { VesselCrewShiftsComponent } from './vessel-crew/vessel-crew-shifts/vessel-crew-shifts.component';
+import { VesselAlarmsComponent } from './vessel-alarms/vessel-alarms.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -50,7 +63,19 @@ import { VesselArcGaugeComponent } from './widgets/vessel-arc-gauge/vessel-arc-g
     VesselFuelMainComponent,
     VesselToggleComponent,
     VesselFuelStatisticsComponent,
-    VesselArcGaugeComponent ],
+    VesselArcGaugeComponent,
+    VesselLiquidContainerComponent,
+    VesselDataCounterComponent,
+    VesselDataCounterIconComponent,
+    VesselCoolingComponent,
+    VesselCompressedAirComponent,
+    VesselAmmeterComponent,
+    VesselPowerPlantComponent,
+    VesselPowerPlantStatisticsComponent,
+    VesselCrewTasksComponent,
+    VesselCrewShiftsComponent,
+    VesselAlarmsComponent,
+    VesselCrewShiftsComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -58,6 +83,8 @@ import { VesselArcGaugeComponent } from './widgets/vessel-arc-gauge/vessel-arc-g
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
+    AngularWeatherWidgetModule,
+    DragDropModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),

@@ -34,12 +34,6 @@
     margin-bottom: 5%;
 }
 
-.cylinders-charts {
-    /* display: flex;
-    flex-flow: row wrap;
-    flex-grow: 10; */
-}
-
 .temperature-chart, .pressure-chart {
     display: inline-block;
     width: 47%;
