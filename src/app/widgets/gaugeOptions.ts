@@ -1,4 +1,5 @@
 export interface IGaugeOptions {
+    color?: string;
     series: IGaugeSerie[];
 }
 

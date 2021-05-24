@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IGaugeOptions } from 'src/app/widgets/gaugeOptions';
+import { WidgetOptionsProvider } from 'src/app/widgets/widgetOptionsProvider';
 
 @Component({
   selector: 'app-vessel-fuel-statistics',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VesselFuelStatisticsComponent implements OnInit {
 
-  constructor() { }
+  gaugeOptions: IGaugeOptions;
+
+  constructor() {
+    this.gaugeOptions = WidgetOptionsProvider.GetGaugeOptions();
+    this.gaugeOptions.color = 'green';
+   }
 
   ngOnInit(): void {
   }

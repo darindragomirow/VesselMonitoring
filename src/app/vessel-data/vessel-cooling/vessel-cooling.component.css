@@ -1,0 +1,26 @@
+.vessel-cooling-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+h5 {
+    text-align: center;
+}
+
+.gauge {
+    height: 200px;
+    width: 200px;
+}
+
+#fw-pump-2, #sw-pump-1, #sw-pump-2 {
+    margin-top: 23%;
+}
+
+.data-column {
+    margin-left: 2em;
+}
+
+.data-row {
+    margin-bottom: 10%;
+    justify-content: space-around;
+}

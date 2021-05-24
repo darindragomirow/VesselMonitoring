@@ -1,7 +1,47 @@
 <div class="vessel-fuel-statistics-container">
     <div class="data-row">
         <div class="data-column">
-            <app-vessel-arc-gauge></app-vessel-arc-gauge>
+            <h5>Fuel level</h5>
+            <div id="fuel-level">
+                <app-vessel-liquid-container></app-vessel-liquid-container>
+            </div>
         </div>
+        <div class="data-column">
+            <div id="fuel-avg-consumption-h">
+                <app-vessel-data-counter 
+                [value]="10"
+                title="tons/h">
+            </app-vessel-data-counter>
+            </div>
+        </div>
+        <h5>Avg. consumption</h5>
+        <div class="data-column">
+            <div id="fuel-avg-consumption-d">
+                <app-vessel-data-counter 
+                [value]="150"
+                title="tons/day">
+                </app-vessel-data-counter>
+            </div>
+        </div>
+        <div id="miles-left" class="data-column">
+            <app-vessel-data-counter-icon
+            [value]="550"
+            title="Miles left">
+            </app-vessel-data-counter-icon>
+        </div>
+    </div>
+    <div class="data-row">
+            <div class="fuel-level-chart">
+                <app-vessel-line-chart 
+                    [id]="'10'"
+                    [title]="'Fuel level chart'">
+                </app-vessel-line-chart>
+            </div>
+            <div class="fuel-consumption-chart">
+                <app-vessel-line-chart 
+                    [id]="'20'"
+                    [title]="'Fuel consumption chart'">
+                </app-vessel-line-chart>
+            </div>
     </div>
 </div>

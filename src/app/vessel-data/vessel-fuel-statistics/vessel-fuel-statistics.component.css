@@ -1,0 +1,34 @@
+.vessel-fuel-statistics-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.vessel-fuel-statistics-container h5 {
+    text-align: center;
+}
+
+.gauge {
+    width: 300px;
+    height: 300px;
+}
+
+img {
+    width: 25%;
+    height: 25%;
+}
+
+#fuel-level {
+    margin-top: 10%;
+}
+
+#miles-left {
+    margin-left: 47%;
+    margin-top: -15%;
+}
+
+.fuel-level-chart, .fuel-consumption-chart {
+    display: inline-block;
+    width: 46%;
+    margin-top: 10%;
+    margin-left: 4%;
+}

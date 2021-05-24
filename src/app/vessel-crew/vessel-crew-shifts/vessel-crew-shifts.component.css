@@ -1,0 +1,11 @@
+.shifts-container {
+    width: 75em;
+    margin-left: 3em;
+}
+
+.header {
+    background: linear-gradient(40deg,#45cafc,#303f9f);
+    text-align: center;
+    color: white;
+    padding: 1em;
+}

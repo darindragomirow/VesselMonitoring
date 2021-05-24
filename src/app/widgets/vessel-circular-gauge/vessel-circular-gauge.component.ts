@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
 
 @Component({
@@ -7,7 +7,9 @@ import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-cir
   styleUrls: ['./vessel-circular-gauge.component.css']
 })
 export class VesselCircularGaugeComponent implements OnInit {
-
+  @Input() startAngle = 270;
+  @Input() endAngle = 90;
+  @Input() radius = '100%';
   public id: number = Math.floor(Math.random() * (100 - 1 + 1) + 1);
 
   constructor() { }
@@ -19,9 +21,9 @@ export class VesselCircularGaugeComponent implements OnInit {
   private initCircularGauge(): void {
     const circulargauge: CircularGauge = new CircularGauge({
       axes: [{
-          radius: '100%',
-          startAngle: 270,
-          endAngle: 90,
+          radius: this.radius,
+          startAngle: this.startAngle,
+          endAngle: this.endAngle,
           majorTicks: {
               width: 0
           },

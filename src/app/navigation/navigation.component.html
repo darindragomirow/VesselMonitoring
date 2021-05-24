@@ -44,10 +44,38 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a routerLink="/app-vessel-cooling" routerLinkActive="active" (click)="selectNavigationItem('Cooling')">Cooling</a>
+                    </li>
+                    <li>
+                        <a routerLink="/app-vessel-compressed-air" routerLinkActive="active" (click)="selectNavigationItem('Compressed air')">Compressed air</a>
+                    </li>
+                    <li>
+                        <a href="#powerPlantSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Power Plant</a>
+                        <ul class="collapse show list-unstyled" id="fuelSubMenu">
+                            <li>
+                                <a routerLink="/app-vessel-power-plant" routerLinkActive="active" (click)="selectNavigationItem('Power Plant Main View')">Power Plant Main view</a>
+                            </li>
+                            <li>
+                                <a routerLink="/app-vessel-power-plant-statistics" routerLinkActive="active" (click)="selectNavigationItem('Power Plant Statistics')">Power Plant Statistics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#crewSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Crew</a>
+                        <ul class="collapse show list-unstyled" id="fuelSubMenu">
+                            <li>
+                                <a routerLink="/app-vessel-crew-tasks" routerLinkActive="active" (click)="selectNavigationItem('Crew Tasks')">Crew Tasks</a>
+                            </li>
+                            <li>
+                                <a routerLink="/app-vessel-crew-shifts" routerLinkActive="active" (click)="selectNavigationItem('Crew Shifts')">Crew Shifts</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>
-                <a href="#">Alarms</a>
+                <a routerLink="/app-vessel-alarms" routerLinkActive="active" (click)="selectNavigationItem('Alarms')">Alarms</a>
             </li>
             <li>
                 <a routerLink="/app-weather" routerLinkActive="active" (click)="selectNavigationItem('Weather')">Weather</a>

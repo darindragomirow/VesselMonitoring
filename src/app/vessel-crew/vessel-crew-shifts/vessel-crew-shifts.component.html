@@ -1,0 +1,23 @@
+<div class="shifts-container">
+    <div class="header">
+        <h4>Current Shift(08:00 - 20:00)</h4>
+    </div>
+    <table mdbTable class="z-depth-1">
+        <thead>
+        <tr>
+          <th [mdbTableSort]="shifts" sortBy="id">ID</th>
+          <th [mdbTableSort]="shifts" sortBy="name">Name</th>
+          <th [mdbTableSort]="shifts" sortBy="position">Position</th>
+          <th [mdbTableSort]="shifts" sortBy="sector">Sector</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of shifts; let i = index">
+          <th scope="row">{{el.id}}</th>
+          <td>{{el.name}}</td>
+          <td>{{el.position}}</td>
+          <td>{{el.sector}}</td>
+        </tr>
+        </tbody>
+      </table>
+  </div>
