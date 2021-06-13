@@ -1,8 +1,13 @@
+<app-tag-selector (tagSelectedEvent)="tagChange($event)"></app-tag-selector>
 <div class="control-section">
     <div class="col-md-8">
         <ejs-lineargauge #gauge style='display:block;' 
         [container]='container' 
-        [axes]='axes'>
+        [axes]='axes'
+        background='transparent'>
         </ejs-lineargauge>
     </div>
+    <!-- <div class="actual-value">
+        <span>{{tagData.value}} °C</span>
+    </div> -->
 </div>

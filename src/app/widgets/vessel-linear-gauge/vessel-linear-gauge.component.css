@@ -1,3 +1,9 @@
 ejs-lineargauge {
     height: 250px;
 }
+
+.actual-value {
+    color: red;
+    margin-left: 25%;
+    margin-top: -25%;
+}

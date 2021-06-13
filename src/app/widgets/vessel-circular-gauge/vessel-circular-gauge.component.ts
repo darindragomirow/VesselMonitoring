@@ -1,25 +1,89 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CircularGauge, ILoadedEventArgs, GaugeTheme } from '@syncfusion/ej2-circulargauge';
+import { interval } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
+import { ITag, ITagValue } from 'src/app/models/tagModels';
+import { TagDataService } from 'src/app/services/tag-data.service';
+import { IDataWidget } from '../models/widgetModel';
 
 @Component({
   selector: 'app-vessel-circular-gauge',
   templateUrl: './vessel-circular-gauge.component.html',
   styleUrls: ['./vessel-circular-gauge.component.css']
 })
-export class VesselCircularGaugeComponent implements OnInit {
+export class VesselCircularGaugeComponent implements IDataWidget, OnInit, OnDestroy {
   @Input() startAngle = 270;
   @Input() endAngle = 90;
   @Input() radius = '100%';
-  public id: number = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+  id: number = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+  tag: ITag;
+  tagData: ITagValue;
+  tagValueTime: string;
+  alive: boolean;
+  gauge!: CircularGauge;
 
-  constructor() { }
+  constructor(private tagDataService: TagDataService) {
+    this.tag = {
+      id: 'ns=2;s=Simulation Examples.Functions.Ramp1',
+      browseName: 'Ramp1',
+      dataType: 'Int64'
+    };
+    this.tagData = {
+      value: 'Bad data',
+      dataType: 'String',
+      isGood: false,
+      time: '',
+      errorMessage: ''
+    };
+    this.tagValueTime = '';
+    this.alive = false;
+  }
 
   ngOnInit(): void {
     this.initCircularGauge();
+    this.subscribeForTagValue();
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  tagChange(selectedTag: ITag): void {
+    this.tag = selectedTag;
+  }
+
+  subscribeForTagValue(): void {
+    this.alive = true;
+    interval(5000)
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(() => this.getTagValue());
+  }
+
+  getTagValue(): void {
+    this.tagDataService
+        .getValue(this.tag)
+        .subscribe({
+          next: result => {
+             this.tagData = result as ITagValue;
+             const date = new Date(this.tagData.time);
+             const valueHours = date.getHours();
+             const valueMinutes = date.getMinutes();
+             this.tagValueTime = `${valueHours}:${valueMinutes}`;
+             this.updateInstrumentData();
+            } ,
+          error: err => { console.log(err); }
+        });
+  }
+
+  updateInstrumentData(): void {
+    if (this.gauge && this.tagData.isGood){
+      this.gauge.setPointerValue(0, 0, this.tagData.value);
+    }
   }
 
   private initCircularGauge(): void {
-    const circulargauge: CircularGauge = new CircularGauge({
+    this.gauge = new CircularGauge({
+      background: 'transparent',
       axes: [{
           radius: this.radius,
           startAngle: this.startAngle,
@@ -40,7 +104,7 @@ export class VesselCircularGaugeComponent implements OnInit {
               offset: 0
           },
           pointers: [{
-              value: 60,
+              value: 100,
               radius: '60%',
               pointerWidth: 10,
               cap: {
@@ -54,7 +118,7 @@ export class VesselCircularGaugeComponent implements OnInit {
       }]
   });
     setTimeout(() => {
-     circulargauge.appendTo(`#cg-${this.id}`);
+     this.gauge.appendTo(`#cg-${this.id}`);
      this.applyCustomStyles();
     }, 100);
   }

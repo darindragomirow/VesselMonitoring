@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TagsComponent } from './tags/tags.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -22,6 +23,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { VesselEngineCylindersComponent } from './vessel-data/vessel-engine-cylinders/vessel-engine-cylinders.component';
 import { VesselLinearGaugeComponent } from './widgets/vessel-linear-gauge/vessel-linear-gauge.component';
 import { VesselCircularGaugeComponent } from './widgets/vessel-circular-gauge/vessel-circular-gauge.component';
+import { VesselFullCircularGaugeComponent } from './widgets/vessel-full-circular-gauge/vessel-full-circular-gauge.component';
 import { VesselLineChartComponent } from './widgets/vessel-line-chart/vessel-line-chart.component';
 import { VesselThrustersComponent } from './vessel-data/vessel-thrusters/vessel-thrusters.component';
 import { VesselEngineTurbochargingComponent } from './vessel-data/vessel-engine-turbocharging/vessel-engine-turbocharging.component';
@@ -57,6 +59,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     VesselEngineCylindersComponent,
     VesselLinearGaugeComponent,
     VesselCircularGaugeComponent,
+    VesselFullCircularGaugeComponent,
     VesselLineChartComponent,
     VesselThrustersComponent,
     VesselEngineTurbochargingComponent,
@@ -82,6 +85,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
+    NgbModule,
     BrowserAnimationsModule,
     AngularWeatherWidgetModule,
     DragDropModule,

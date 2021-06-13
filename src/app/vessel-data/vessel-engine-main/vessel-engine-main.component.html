@@ -13,11 +13,11 @@
         <img src="../../../assets/engine/vessel-engine-main-view.jpg">
         <div class="engine-vital-data-right">
             <div class="engine-stress">
-                <div echarts [options]="gaugeOptions" class="gauge"></div>
+                <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
                 <br><br><span><b>Engine stress</b></span>
             </div>
             <div class="engine-pressure">
-                <div echarts [options]="gaugeOptions" class="gauge"></div>
+                <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
                 <br><br><span><b>Engine mean pressure</b></span>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="data-column">
                 <br><br><span><b>Start air</b></span>
                 <div class="data-row">
-                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
                 </div>
             </div>
             <div class="data-column">
@@ -66,7 +66,7 @@
             <div class="data-column">
                 <br><br><span><b>Control air</b></span>
                 <div class="data-row">
-                    <div echarts [options]="gaugeOptions" class="gauge"></div>
+                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
                 </div>
             </div>
             <div class="data-column">

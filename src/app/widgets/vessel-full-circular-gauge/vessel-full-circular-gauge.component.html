@@ -1,4 +1,2 @@
 <app-tag-selector (tagSelectedEvent)="tagChange($event)"></app-tag-selector>
-<div class="circular-gauge">
-    <div id="cg-{{id}}"></div>
-</div>
+<div echarts #fullGauge class="gauge" [options]="gaugeOptions"></div>
