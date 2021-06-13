@@ -46,7 +46,7 @@ export class WidgetOptionsProvider {
                     offsetCenter: [0, '70%']
                 },
                 data: [{
-                    value: 70
+                    value: 100
                 }]
             }]
     };

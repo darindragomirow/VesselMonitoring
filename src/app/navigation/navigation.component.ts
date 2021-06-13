@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../services/dashboard.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
   public selectedNavigationItem = 'Home';
+  public editModeEnabled = false;
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
+  }
+
+  enterEditMode(): void {
+    this.editModeEnabled = true;
+    this.dashboardService.editModeEnabled = true;
+  }
+
+  exitEditMode(): void {
+    this.editModeEnabled = false;
+    this.dashboardService.editModeEnabled = false;
   }
 
   public selectNavigationItem(navItem: string): void {
