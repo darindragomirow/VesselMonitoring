@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BollingerBands } from '@syncfusion/ej2-charts';
 import { interval } from 'rxjs';
 import { takeUntil, takeWhile } from 'rxjs/operators';
@@ -15,6 +15,8 @@ import * as echarts from 'echarts';
   styleUrls: ['./vessel-full-circular-gauge.component.css']
 })
 export class VesselFullCircularGaugeComponent implements IDataWidget, OnInit, OnDestroy, AfterViewInit {
+  @Input() height: string;
+  @Input() width: string;
   @ViewChild('fullGauge')
   gaugeElement!: ElementRef;
   id: number = Math.floor(Math.random() * (100 - 1 + 1) + 1);
@@ -26,6 +28,8 @@ export class VesselFullCircularGaugeComponent implements IDataWidget, OnInit, On
   gauge: any;
 
   constructor(private tagDataService: TagDataService) {
+    this.height = '200px';
+    this.width = '200px';
     this.tag = {
       id: 'ns=2;s=Simulation Examples.Functions.Ramp1',
       browseName: 'Ramp1',
@@ -44,6 +48,7 @@ export class VesselFullCircularGaugeComponent implements IDataWidget, OnInit, On
    }
 
   ngOnInit(): void {
+    this.applyCustomStyles();
   }
 
   ngAfterViewInit(): void {
@@ -87,5 +92,10 @@ export class VesselFullCircularGaugeComponent implements IDataWidget, OnInit, On
   updateInstrumentData(): void {
     this.gaugeOptions.series[0].data[0].value = this.tagData.value;
     this.gauge?.setOption(this.gaugeOptions);
+  }
+
+  private applyCustomStyles(): void {
+    $('.gauge').css('height', this.height);
+    $('.gauge').css('width', this.width);
   }
 }

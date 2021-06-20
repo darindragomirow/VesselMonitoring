@@ -18,8 +18,14 @@
             <div class="data-column">
                 <h5>Air filter pressure drop</h5>
                 <div class="data-row">
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                        [height]='gaugeOptions.height'
+                        [width]='gaugeOptions.width'>
+                    </app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                        [height]='gaugeOptions.height'
+                        [width]='gaugeOptions.width'>
+                    </app-vessel-full-circular-gauge>
                 </div>
                 <div class="data-row">
                     <span id="filter1">Filter 1</span>
@@ -29,8 +35,14 @@
             <div class="data-column">
                 <h5>Air cooler pressure drop</h5>
                 <div class="data-row">
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                        [height]='gaugeOptions.height'
+                        [width]='gaugeOptions.width'>
+                    </app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                        [height]='gaugeOptions.height'
+                        [width]='gaugeOptions.width'>
+                    </app-vessel-full-circular-gauge>
                 </div>
                 <div class="data-row">
                     <span id="ac1">Air cooler 1</span>
@@ -43,8 +55,14 @@
             <div class="data-column">
                 <h5>Turbocharging speed</h5>
                 <div class="data-row">
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
-                    <app-vessel-full-circular-gauge></app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                        [height]='gaugeOptions.height'
+                        [width]='gaugeOptions.width'>
+                    </app-vessel-full-circular-gauge>
+                    <app-vessel-full-circular-gauge 
+                    [height]='gaugeOptions.height'
+                    [width]='gaugeOptions.width'>
+                </app-vessel-full-circular-gauge>
                 </div>
                 <div class="data-row">
                     <span id="tc1">Turbocharger 1</span>

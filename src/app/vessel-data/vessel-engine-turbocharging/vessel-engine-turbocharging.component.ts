@@ -10,10 +10,12 @@ export class VesselEngineTurbochargingComponent implements OnInit {
 
   gaugeOptions: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.gaugeOptions = WidgetOptionsProvider.GetGaugeOptions();
+  constructor() {
+    this.gaugeOptions = {
+      width: '300px',
+      height: '300px'
+    };
   }
 
+  ngOnInit(): void {}
 }
