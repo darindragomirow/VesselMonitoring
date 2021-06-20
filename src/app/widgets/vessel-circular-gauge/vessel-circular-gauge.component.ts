@@ -125,6 +125,5 @@ export class VesselCircularGaugeComponent implements IDataWidget, OnInit, OnDest
 
   private applyCustomStyles(): void {
     $('svg').css('margin-top', '-15%');
-    $('rect').attr('fill', 'transparent');
   }
 }
