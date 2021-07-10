@@ -1,0 +1,11 @@
+<div class="vessel-location-container">
+    <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1xfMsDzqWtkPauwNTpGyFXnMHbByUd0kb" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng" iconUrl="../../assets/map-markers/default_vessel.png"></agm-marker>
+    </agm-map>
+    <h5><b>Current vessel coordinates</b></h5>
+    <h5><b>Latitude:</b> {{lat}}°</h5>
+    <h5><b>Longitude:</b> {{lng}}°</h5>
+    <h5><b>Location:</b><span style="color:blue;"> North sea</span></h5>
+</div>

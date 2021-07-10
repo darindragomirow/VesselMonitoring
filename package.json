@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^3.0.0-beta.0",
     "@angular/animations": "~11.0.5",
     "@angular/cdk": "^11.0.3",
     "@angular/common": "~11.0.5",
@@ -29,6 +30,7 @@
     "@syncfusion/ej2-angular-lineargauge": "^19.1.54",
     "@syncfusion/ej2-circulargauge": "^19.1.55",
     "@syncfusion/ej2-lineargauge": "^19.1.54",
+    "@types/googlemaps": "^3.43.3",
     "angular-bootstrap-md": "^10.1.1",
     "angular2-weather-widget": "^1.0.1",
     "animate.css": "^4.1.1",

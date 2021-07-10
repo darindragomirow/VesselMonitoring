@@ -8,11 +8,14 @@ import { WidgetOptionsProvider } from '../widgets/widgetOptionsProvider';
 })
 export class WeatherComponent implements OnInit {
 
-  humidityOptions: any;
+  gaugeOptions: any;
 
-  constructor() { }
+  constructor() {
+    this.gaugeOptions = {
+      width: '300px',
+      height: '300px'
+    };
+   }
 
-  ngOnInit(): void {
-    this.humidityOptions = WidgetOptionsProvider.GetGaugeOptions();
-  }
+  ngOnInit(): void {}
 }
