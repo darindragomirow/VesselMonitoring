@@ -9,3 +9,32 @@
     color: white;
     padding: 1em;
 }
+
+/* alarm conditions colors */
+@keyframes blinker {
+    50% {
+      opacity: 0;
+      color: #000;
+    }
+  }
+
+.HighHigh {
+    background-color: rgb(206, 46, 18);
+    animation: blinker 2s linear 1s;
+}
+
+.High {
+    background-color: rgb(230, 248, 66);
+    animation: blinker 2s linear 1s;
+}
+
+.Low {
+    background-color: rgb(59, 217, 223);
+    animation: blinker 2s linear 1s;
+}
+
+.LowLow {
+    background-color: rgb(61, 94, 202);
+    animation: blinker 2s linear 1s;
+}
+

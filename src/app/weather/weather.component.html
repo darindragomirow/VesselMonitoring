@@ -14,7 +14,10 @@
         <div class="data-column">
             <div class="comfort-level">
                 <p>Humidity</p>
-                <div echarts [options]="humidityOptions" class="humidity gauge"></div>
+                <app-vessel-full-circular-gauge 
+                    [height]='gaugeOptions.height'
+                    [width]='gaugeOptions.width'>
+                </app-vessel-full-circular-gauge>
                 <span class="feelsLike">Feels like: 5°</span>
                 <span class="uv">UV index: Low</span>
             </div>

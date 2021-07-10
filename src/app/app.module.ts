@@ -43,6 +43,8 @@ import { VesselCrewTasksComponent } from './vessel-crew/vessel-crew-tasks/vessel
 import { VesselCrewShiftsComponent } from './vessel-crew/vessel-crew-shifts/vessel-crew-shifts.component';
 import { VesselAlarmsComponent } from './vessel-alarms/vessel-alarms.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { VesselLocationComponent } from './vessel-location/vessel-location.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     VesselCrewTasksComponent,
     VesselCrewShiftsComponent,
     VesselAlarmsComponent,
-    VesselCrewShiftsComponent],
+    VesselCrewShiftsComponent,
+    VesselLocationComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -91,6 +94,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DragDropModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBZQtRhN6q-emVP915cH2UUFCFJnZJCtgM'
     }),
     LinearGaugeAllModule
   ],

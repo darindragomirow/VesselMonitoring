@@ -18,6 +18,7 @@ import { VesselFuelStatisticsComponent } from './vessel-data/vessel-fuel-statist
 import { VesselPowerPlantStatisticsComponent } from './vessel-data/vessel-power-plant-statistics/vessel-power-plant-statistics.component';
 import { VesselPowerPlantComponent } from './vessel-data/vessel-power-plant/vessel-power-plant.component';
 import { VesselThrustersComponent } from './vessel-data/vessel-thrusters/vessel-thrusters.component';
+import { VesselLocationComponent } from './vessel-location/vessel-location.component';
 import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'app-vessel-power-plant-statistics', component: VesselPowerPlantStatisticsComponent },
   { path: 'app-vessel-crew-tasks', component: VesselCrewTasksComponent },
   { path: 'app-vessel-crew-shifts', component: VesselCrewShiftsComponent },
-  { path: 'app-vessel-alarms', component: VesselAlarmsComponent }
+  { path: 'app-vessel-alarms', component: VesselAlarmsComponent },
+  { path: 'app-vessel-location', component: VesselLocationComponent }
 ];
 
 @NgModule({

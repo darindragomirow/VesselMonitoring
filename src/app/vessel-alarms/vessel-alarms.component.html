@@ -16,7 +16,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let el of elements; let i = index">
+        <tr *ngFor="let el of elements; let i = index" [class]="el.condition" [hidden]="el.acked"> 
           <th scope="row">{{el.id}}</th>
           <td>{{el.time}}</td>
           <td>{{el.initiator}}</td>
@@ -24,7 +24,7 @@
           <td>{{el.severity}}</td>
           <td>{{el.treshold}}</td>
           <td>{{el.condition}}</td>
-          <td>{{el.acked}}</td>
+          <td><input type="checkbox" (click)="deleteAlarm(el.id)"></td>
         </tr>
         </tbody>
       </table>
