@@ -1,0 +1,47 @@
+<div class="toolbar">
+    <button (click)="layoutService.addItem()"><i class="fas fa-plus"></i></button>
+    <div
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('fullGauge')">
+    <b>Gauge</b>
+    <img src="../../assets/widget-icons/gauge.jpg">
+  </div>
+  <div
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('toggle')">
+    <b>Toggle</b>
+    <img src="../../assets/widget-icons/toggle.png">
+  </div>
+  <div
+  class="draggable"
+  draggable="true"
+  (dragend)="layoutService.dropItem('thermometer')">
+  <b>Thermometer</b>
+  <img src="../../assets/widget-icons/thermometer.png">
+</div>
+<div
+class="draggable"
+draggable="true"
+(dragend)="layoutService.dropItem('chart')">
+<b>Chart</b>
+<img src="../../assets/widget-icons/chart.png">
+</div>
+<div
+class="draggable"
+draggable="true"
+(dragend)="layoutService.dropItem('counter')">
+<b>Counter</b>
+<img src="../../assets/widget-icons/counter.png">
+</div>
+</div>
+<gridster [options]="options">
+  <gridster-item 
+  *ngFor="let item of layout"
+  [item]="item"
+  (dragover)="layoutService.setDropId(item.id)">
+  <button (click)="layoutService.deleteItem(item.id)"><i class="fas fa-times"></i></button>
+  <ng-container appLayoutItem [componentRef]="layoutService.getComponentRef(item.id)"></ng-container>
+  </gridster-item>
+</gridster>

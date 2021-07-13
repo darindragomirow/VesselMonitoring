@@ -8,6 +8,7 @@ import { TagsComponent } from './tags/tags.component';
 import { VesselAlarmsComponent } from './vessel-alarms/vessel-alarms.component';
 import { VesselCrewShiftsComponent } from './vessel-crew/vessel-crew-shifts/vessel-crew-shifts.component';
 import { VesselCrewTasksComponent } from './vessel-crew/vessel-crew-tasks/vessel-crew-tasks.component';
+import { VesselDashboardComponent } from './vessel-dashboard/vessel-dashboard.component';
 import { VesselCompressedAirComponent } from './vessel-data/vessel-compressed-air/vessel-compressed-air.component';
 import { VesselCoolingComponent } from './vessel-data/vessel-cooling/vessel-cooling.component';
 import { VesselEngineCylindersComponent } from './vessel-data/vessel-engine-cylinders/vessel-engine-cylinders.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'app-vessel-crew-tasks', component: VesselCrewTasksComponent },
   { path: 'app-vessel-crew-shifts', component: VesselCrewShiftsComponent },
   { path: 'app-vessel-alarms', component: VesselAlarmsComponent },
-  { path: 'app-vessel-location', component: VesselLocationComponent }
+  { path: 'app-vessel-location', component: VesselLocationComponent },
+  { path: 'app-vessel-dashboard', component: VesselDashboardComponent }
 ];
 
 @NgModule({
