@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { ITag, ITagValue } from '../models/tagModels';
@@ -17,7 +18,9 @@ export class VesselLocationComponent implements OnInit, OnDestroy {
   lngTag: ITag;
   alive: boolean;
 
-  constructor(private tagDataService: TagDataService) {
+  constructor(
+    private tagDataService: TagDataService,
+    private toastr: ToastrService) {
     this.latTag = {
       id: 'ns=2;s=Simulation Examples.Functions.Latitude',
       browseName: 'Latitude',
@@ -33,6 +36,7 @@ export class VesselLocationComponent implements OnInit, OnDestroy {
 
    ngOnInit(): void {
     //  this.subscribeForTagValue();
+    this.toastr.info('Location successfully received.');
     this.alive = true;
     interval(1000)
       .pipe(takeWhile(() => this.alive))

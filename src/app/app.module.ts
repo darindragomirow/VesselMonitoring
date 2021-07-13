@@ -45,6 +45,10 @@ import { VesselAlarmsComponent } from './vessel-alarms/vessel-alarms.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { VesselLocationComponent } from './vessel-location/vessel-location.component';
 import { AgmCoreModule } from '@agm/core';
+import { ToastrModule } from 'ngx-toastr';
+import { VesselDashboardComponent } from './vessel-dashboard/vessel-dashboard.component';
+import { GridsterModule } from 'angular-gridster2';
+import { LayoutItemDirective } from './directives/layout-item.directive';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,9 @@ import { AgmCoreModule } from '@agm/core';
     VesselCrewShiftsComponent,
     VesselAlarmsComponent,
     VesselCrewShiftsComponent,
-    VesselLocationComponent],
+    VesselLocationComponent,
+    VesselDashboardComponent,
+    LayoutItemDirective],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -98,7 +104,16 @@ import { AgmCoreModule } from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBZQtRhN6q-emVP915cH2UUFCFJnZJCtgM'
     }),
-    LinearGaugeAllModule
+    ToastrModule.forRoot(),
+    LinearGaugeAllModule,
+    GridsterModule
+  ],
+  entryComponents: [
+    VesselFullCircularGaugeComponent,
+    VesselToggleComponent,
+    VesselLinearGaugeComponent,
+    VesselDataCounterComponent,
+    VesselLineChartComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

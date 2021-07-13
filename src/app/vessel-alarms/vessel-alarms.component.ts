@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { AlarmConditiontype, IAlarm, IAlarmCondition } from '../models/alarmModels';
@@ -42,7 +43,9 @@ export class VesselAlarmsComponent implements OnInit, OnDestroy {
     type: AlarmConditiontype.LowLow
   };
 
-  constructor(private tagDataService: TagDataService) {
+  constructor(
+    private tagDataService: TagDataService,
+    private toastr: ToastrService) {
     this.alarmTag = {
       id: 'ns=2;s=Simulation Examples.Functions.D-13ESVPT01',
       browseName: 'D-13ESVPT01',
@@ -130,6 +133,8 @@ export class VesselAlarmsComponent implements OnInit, OnDestroy {
           acked: false,
           color: condition.color
         });
+
+      this.toastr.warning('An alarm was generated just now!');
     }
   }
 
@@ -138,6 +143,7 @@ export class VesselAlarmsComponent implements OnInit, OnDestroy {
     if (element){
       setTimeout(() => {
         element.acked = true;
+        this.toastr.success('The acked alarm was removed from the list.');
       }, 3000);
     }
   }
